@@ -344,6 +344,10 @@
             top: -10px; font-size: 0.8rem; opacity: 1; color: var(--c-gold);
         }
 
+        /* Arabic Form Fixes */
+        html[lang="ar"] .form-label { left: auto; right: 0; }
+        html[lang="ar"] .form-control { text-align: right; }
+
         footer {
             background: var(--c-forest); color: rgba(255,255,255,0.4);
             padding: 80px 8%; font-size: 0.9rem;
@@ -351,6 +355,16 @@
         }
         .social-links a { color: white; margin-left: 15px; font-size: 1.5rem; transition: 0.3s; }
         .social-links a:hover { color: var(--c-gold); }
+
+        /* Footer Layout & RTL Support */
+        .footer-col-1 { text-align: left; }
+        .footer-col-2 { text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; }
+        .footer-links-row a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.8rem; }
+        
+        html[lang="ar"] .footer-col-1 { text-align: right; }
+        html[lang="ar"] .footer-col-2 { text-align: left; align-items: flex-start; }
+        html[lang="ar"] .social-links a { margin-left: 0; margin-right: 15px; }
+        html[lang="ar"] .footer-links-row a { margin-left: 0; margin-right: 20px; }
 
         /* Responsive Fixes */
         @media (max-width: 900px) {
@@ -539,21 +553,21 @@
     </section>
 
     <footer>
-        <div style="text-align: left;">
+        <div class="footer-col-1">
             <h3 style="color: white; margin-bottom: 20px;" data-en="Loyal Fields." data-ar="لويال فيلدز.">Loyal Fields.</h3>
             <p data-en="Kalaat Safiye, Jwaya, Tyre District, South Lebanon" data-ar="قلعة صفية، جويا، قضاء صور، جنوب لبنان">Kalaat Safiye, Jwaya, Tyre District, South Lebanon</p>
-            <p>+961 81 858 783 | info@loyalfields.com</p>
+            <p><span dir="ltr">+961 81 858 783</span> | info@loyalfields.com</p>
             <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">© 2026 Loyal Fields SARL. All rights reserved.</p>
         </div>
-        <div style="text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+        <div class="footer-col-2">
             <div class="social-links">
                 <a href="#"><i class="ph ph-linkedin-logo"></i></a>
                 <a href="#"><i class="ph ph-instagram-logo"></i></a>
                 <a href="#"><i class="ph ph-whatsapp-logo"></i></a>
             </div>
-            <div style="margin-top: 20px;">
-                <a href="#" style="color: white; text-decoration: none; margin-left: 20px; font-size: 0.8rem;" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
-                <a href="#" style="color: white; text-decoration: none; margin-left: 20px; font-size: 0.8rem;" data-en="Terms" data-ar="الشروط والأحكام">Terms</a>
+            <div class="footer-links-row" style="margin-top: 20px;">
+                <a href="#" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                <a href="#" data-en="Terms" data-ar="الشروط والأحكام">Terms</a>
             </div>
         </div>
     </footer>
